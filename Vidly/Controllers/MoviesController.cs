@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
-using Microsoft.Ajax.Utilities;
 using Vidly.Models;
 using Vidly.ViewModels;
 
@@ -11,6 +7,22 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
+        public ViewResult Index()
+        {
+            var movies = GetMovies();
+
+            return View(movies);
+        }
+
+        private IEnumerable<Movie> GetMovies()
+        {
+            return new List<Movie>
+            {
+                new Movie { Id = 1, Name = "Przygody Fabiana" },
+                new Movie { Id = 2, Name = "Przygody Fabiana 2" }
+            };
+        }
+
         // GET: Movies/Random
         public ViewResult Random()
         {
@@ -34,6 +46,5 @@ namespace Vidly.Controllers
 
             return View(viewModel);
         }
-
     }
 }
