@@ -1,4 +1,5 @@
-﻿@model Vidly.Models.Customer
+﻿@using Microsoft.Ajax.Utilities
+@model Vidly.Models.Customer
 @{
     ViewBag.Title = Model.Name;
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,6 +10,10 @@
     <thead>
         <tr>
             <th>Membership Type</th>
+            @if (Model.Birthdate.HasValue)
+            {
+                <th>Birthdate</th>
+            }
             <th>Discount Rate</th>
             <th>Duration In Months</th>
             <th>Sign Up Fee</th>
@@ -17,6 +22,10 @@
     <tbody>
         <tr>
             <td>@Model.MembershipType.Name</td>
+            @if (Model.Birthdate.HasValue)
+            {
+                <th>@Model.Birthdate.Value.ToShortDateString()</th>
+            }
             <td>@Model.MembershipType.DiscountRate%</td>
             <td>@Model.MembershipType.DurationInMonths</td>
             <td>@Model.MembershipType.SignUpFee</td>
