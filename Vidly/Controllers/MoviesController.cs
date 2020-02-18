@@ -21,6 +21,18 @@ namespace Vidly.Controllers
             _context.Dispose();
         }
 
+        public ActionResult MovieForm()
+        {
+            var genres = _context.Genres.ToList();
+
+            var viewModel = new MovieFormViewModel
+            {
+                Genres = genres
+            };
+
+            return View("MovieForm", viewModel);
+        }
+
         public ViewResult Index()
         {
             var movies = _context.Movies.Include(m => m.Genre).ToList();

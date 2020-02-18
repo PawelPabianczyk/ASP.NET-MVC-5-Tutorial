@@ -1,5 +1,4 @@
 ﻿using System.Data.Entity;
-using System.IO.MemoryMappedFiles;
 using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
