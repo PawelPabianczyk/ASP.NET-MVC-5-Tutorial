@@ -17,7 +17,11 @@ namespace Vidly.Dtos
 
         [Display(Name = "Genre")]
         [Required]
+
         public byte GenreId { get; set; }
+
+        public GenreDto Genre { get; set; }
+
 
         [Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
