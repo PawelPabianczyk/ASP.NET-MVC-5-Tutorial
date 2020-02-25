@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 using Vidly.Models;
 
 namespace Vidly.Dtos
@@ -11,7 +8,7 @@ namespace Vidly.Dtos
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Please enter customer's name.")]
+        [Required]
         [StringLength(255)]
         public string Name { get; set; }
 
@@ -21,8 +18,7 @@ namespace Vidly.Dtos
 
         public MembershipTypeDto MembershipType { get; set; }
 
-        //[Min18YearsIfAMember]
+        //        [Min18YearsIfAMember]
         public DateTime? Birthdate { get; set; }
-
     }
 }

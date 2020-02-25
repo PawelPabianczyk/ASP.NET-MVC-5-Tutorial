@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-using Vidly.Models;
 
 namespace Vidly.Dtos
 {
@@ -15,22 +11,16 @@ namespace Vidly.Dtos
         [StringLength(255)]
         public string Name { get; set; }
 
-        [Display(Name = "Genre")]
         [Required]
-
         public byte GenreId { get; set; }
 
         public GenreDto Genre { get; set; }
 
-
-        [Display(Name = "Release Date")]
-        public DateTime ReleaseDate { get; set; }
-
         public DateTime DateAdded { get; set; }
 
-        [Display(Name = "Number in Stock")]
+        public DateTime ReleaseDate { get; set; }
+
         [Range(1, 20)]
         public byte NumberInStock { get; set; }
-
     }
 }
